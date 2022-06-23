@@ -1,0 +1,11 @@
+{
+    "alive.format.indentWidth": 4,
+    "alive.lsp.install.path": "/home/rich/work/lisp/alive-lsp",
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "error": "#ff0000",
+            "symbol": "#5599aa",
+            "parenthesis": "#999"
+        }
+    }
+}
