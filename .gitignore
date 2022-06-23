@@ -1,3 +1,5 @@
+.vscode/alive
+
 *.abcl
 *.fasl
 *.dx32fsl
