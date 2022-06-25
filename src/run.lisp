@@ -1,12 +1,12 @@
 (in-package :clue)
 
 
-(defmacro suite ((label) &body body)
+(defmacro suite (label &body body)
     `(progn (print-header ,label)
             ,@body))
 
 
-(defmacro test ((label) &body body)
+(defmacro test (label &body body)
     `(let ((result (handler-case
 
                            (progn ,@body)
