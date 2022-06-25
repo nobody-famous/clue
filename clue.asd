@@ -7,7 +7,8 @@
     :depends-on ()
     :components ((:module "src"
                           :components
-                          ((:file "formatting")
+                          ((:file "package")
+                           (:file "formatting")
                            (:file "errors")
                            (:file "check")
                            (:file "run"))))

@@ -1,24 +1,18 @@
-(defpackage :clue/run
-    (:use :cl)
-    (:export :suite
-             :test)
-    (:local-nicknames (:fmt :clue/formatting)))
-
-(in-package :clue/run)
+(in-package :clue)
 
 
-(defun suite (label fn)
-    (fmt:print-header label)
-    (funcall fn))
+(defmacro suite ((label) &body body)
+    `(progn (print-header ,label)
+            ,@body))
 
 
-(defun test (label fn)
-    (let ((result (handler-case
+(defmacro test ((label) &body body)
+    `(let ((result (handler-case
 
-                          (funcall fn)
+                           (progn ,@body)
 
-                      (error (c) (format nil "~A" c)))))
+                       (error (c) (format nil "~A" c)))))
 
-        (format T "~A [~A]~%" label (if result
-                                        (format nil "FAILED: ~A" result)
-                                        "OK"))))
+         (format T "~A [~A]~%" ,label (if result
+                                          (format nil "FAILED: ~A" result)
+                                          "OK"))))
