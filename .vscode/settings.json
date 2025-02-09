@@ -1,0 +1,30 @@
+{
+    "editor.formatOnType": true,
+    "[commonlisp]": {
+        "editor.wordSeparators": "`|;:'\",()"
+    },
+    "alive.lsp.install.path": "/home/rich/work/lisp/alive-lsp",
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "error": "#ff0000",
+            "symbol": "#5599aa",
+            "parenthesis": "#999"
+        }
+    },
+    "alive.format.indentWidth": 4,
+    "alive.lsp.startCommand": [
+        "sbcl",
+        // "--dynamic-space-size",
+        // "2048",
+        "--eval",
+        "(require :asdf)",
+        "--eval",
+        "(asdf:load-system :alive-lsp)",
+        "--eval",
+        "(load \"clue.asd\")",
+        "--eval",
+        "(asdf:load-system :clue)",
+        "--eval",
+        "(alive/server:start)"
+    ]
+}
