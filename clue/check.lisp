@@ -47,7 +47,7 @@
 
 (defmethod are-equal ((a T) b)
     (and (equal (type-of a) (type-of b))
-         (eq a b)))
+         (equalp a b)))
 
 
 (defun check-equal (&key expected actual (hex nil))
